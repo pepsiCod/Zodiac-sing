@@ -12,6 +12,7 @@ namespace Zodiac_sing
             Datum();
             Console.WriteLine("-------------------------------------");
             Zapadnjacki();
+            Console.WriteLine("proba");
 
             
 
