@@ -10,16 +10,16 @@ namespace Zodiac_sing
     {
         static void Main(string[] args)
         {
-            /*
-            Biranje();
+            
+            Biranje(); //pozivanje metoda
             Console.WriteLine("----------------------------------------");
             Datum();
             Console.WriteLine("-------------------------------------");
             Zapadnjacki();
             
-            */
+            
 
-            string put = @"C:\Users\petro\Desktop\LogFile.txt";
+            string put = @"C:\Users\petro\Desktop\LogFile.txt";        //Popunjavanje LOG-fajla
             List<string> ljudi = File.ReadAllLines(put).ToList();
             DateTime thisday = DateTime.Today;
             string vreme = Convert.ToString(thisday);
@@ -27,7 +27,8 @@ namespace Zodiac_sing
 
             ljudi.Add(logIn);
             File.WriteAllLines(put, ljudi);
-           // File.WriteAllText(put, logIn);
+            
+            
                 
             
             
@@ -61,13 +62,13 @@ namespace Zodiac_sing
 
             }
         }
-        static void Datum(string bDay) //Metod koji konvertuje uneti string u datum i proverava validnos datuma(primer Exception Handling-a)
+        static void Datum() //Metod koji konvertuje uneti string u datum i proverava validnos datuma(primer Exception Handling-a)
         {
             
             DateTime date = new DateTime();
             DateTime today = DateTime.Today;
             Console.WriteLine("Unesite datum rodjenja: ");
-            bDay = Console.ReadLine();
+            string bDay = Console.ReadLine();
             date = Convert.ToDateTime(bDay);
 
 
