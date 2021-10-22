@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace Zodiac_sing
 {
@@ -6,18 +10,30 @@ namespace Zodiac_sing
     {
         static void Main(string[] args)
         {
-
+            /*
             Biranje();
             Console.WriteLine("----------------------------------------");
             Datum();
             Console.WriteLine("-------------------------------------");
             Zapadnjacki();
-            Console.WriteLine("proba");
+            
+            */
 
+            string put = @"C:\Users\petro\Desktop\LogFile.txt";
+            List<string> ljudi = File.ReadAllLines(put).ToList();
+            DateTime thisday = DateTime.Today;
+            string vreme = Convert.ToString(thisday);
+            string logIn = Console.ReadLine();
+
+            ljudi.Add(logIn);
+            File.WriteAllLines(put, ljudi);
+           // File.WriteAllText(put, logIn);
+                
+            
             
 
 
-
+            
 
 
 
@@ -45,13 +61,13 @@ namespace Zodiac_sing
 
             }
         }
-        static void Datum() //Metod koji konvertuje uneti string u datum i proverava validnos datuma(primer Exception Handling-a)
+        static void Datum(string bDay) //Metod koji konvertuje uneti string u datum i proverava validnos datuma(primer Exception Handling-a)
         {
             
             DateTime date = new DateTime();
             DateTime today = DateTime.Today;
             Console.WriteLine("Unesite datum rodjenja: ");
-            string bDay = Console.ReadLine();
+            bDay = Console.ReadLine();
             date = Convert.ToDateTime(bDay);
 
 
